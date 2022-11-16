@@ -9,11 +9,11 @@
 export default {
   props: {
     show: Boolean,
-    persistent: Boolean
+    persistent: Boolean,
   },
   data() {
     return {
-      bounce: false
+      bounce: false,
     };
   },
   methods: {
@@ -25,8 +25,8 @@ export default {
       if (this.persistent) {
         this.bounce = true;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped lang="scss">

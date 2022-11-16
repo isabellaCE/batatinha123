@@ -7,9 +7,10 @@
     "preview": "vite preview",
     "test:unit": "vitest --environment jsdom --root src/",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest --environment jsdom run --coverage "
   },
   "dependencies": {
+    "happy-dom": "^7.7.0",
     "sass": "^1.56.1",
     "vue": "^3.2.41"
   },
