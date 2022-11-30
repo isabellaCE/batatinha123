@@ -1,6 +1,11 @@
 <template>
   <div class="t-Sidebar">
-    <div v-if="show" class="t-SidebarBackdrop" @click="handleClick" />
+    <div
+      v-if="show"
+      class="t-SidebarBackdrop"
+      data-testid="t-drawer"
+      @click="handleClick"
+    />
     <transition name="t-Slide" :class="classes">
       <div
         v-if="show"

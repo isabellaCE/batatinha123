@@ -52,15 +52,15 @@ describe("Drawer", () => {
   it("deve disparar o evento handleClick ao clicar para fechar o Drawer", async () => {
     const wrapper = shallowMount(Drawer, {
       slots: {
-        default: 'Slot content'
+        default: "Slot content",
       },
       props: {
-        show: true
-      }
-    })
+        show: true,
+      },
+    });
 
     const spy = vi.spyOn(wrapper.vm, "handleClick");
-    await wrapper.find('.t-SidebarBackdrop').trigger("click")
-    expect(spy).toHaveBeenCalled()
-  })
+    await wrapper.find('[data-testid="t-drawer"]').trigger("click");
+    expect(spy).toHaveBeenCalled();
+  });
 });
