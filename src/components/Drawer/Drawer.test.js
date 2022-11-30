@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { mount } from "@vue/test-utils";
+import { describe, it, expect, vi } from "vitest";
+import { mount, shallowMount } from "@vue/test-utils";
 import Drawer from "./Drawer.vue";
 
 describe("Drawer", () => {
@@ -48,4 +48,19 @@ describe("Drawer", () => {
       "-left"
     );
   });
+
+  it("deve disparar o evento handleClick ao clicar para fechar o Drawer", async () => {
+    const wrapper = shallowMount(Drawer, {
+      slots: {
+        default: 'Slot content'
+      },
+      props: {
+        show: true
+      }
+    })
+
+    const spy = vi.spyOn(wrapper.vm, "handleClick");
+    await wrapper.find('.t-SidebarBackdrop').trigger("click")
+    expect(spy).toHaveBeenCalled()
+  })
 });
